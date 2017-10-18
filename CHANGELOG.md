@@ -1,5 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
+## [1.2.5.9] - 2017-10-18
+### Added
+- sdk命名统一；
+- 修复视图中可能出现null的bug；
+
 ## [1.2.5] - 2017-09-21
 ### Added
 - 新增搜索功能；
