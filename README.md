@@ -32,12 +32,13 @@ allprojects {
 }
 ```
 
+**采用标准版或是精简版可咨询相关负责人**
 ```
-// 一般来说引用这个
-compile 'ai.botbrain.ttcloud:libraryTtc:1.2.5.3'
+// 标准版
+compile 'ai.botbrain.ttcloud:libraryTtc:1.2.5.9'
 
-// 剔除广告版本的
-compile 'ai.botbrain.ttcloud.green:libraryTtc:1.2.5.5'
+// 精简版
+compile 'ai.botbrain.ttcloud.lite:libraryTtc:1.2.5.9'
 ```
 
 
