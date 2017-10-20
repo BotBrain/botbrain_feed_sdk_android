@@ -3,11 +3,12 @@ package com.peter.newssdkdemo;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatButton;
-import android.view.View;
+import android.view.MenuItem;
 
 import ai.botbrain.ttcloud.api.TtCloudManager;
 import ai.botbrain.ttcloud.sdk.view.activity.TsdH5ReaderOnWvActivity;
@@ -16,7 +17,7 @@ import ai.botbrain.ttcloud.sdk.view.fragment.IndexFragment;
 /**
  * 在线文档地址：https://lugq.gitbooks.io/bot_news_document/content/
  */
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private IndexFragment mNewsIndexFragment;
 
@@ -35,14 +36,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             fragmentTransaction.add(R.id.container, mNewsIndexFragment);
             fragmentTransaction.commit();
         }
-
     }
 
     private void initView() {
-        AppCompatButton btn_day = (AppCompatButton) findViewById(R.id.btn_day);
-        AppCompatButton btn_night = (AppCompatButton) findViewById(R.id.btn_night);
-        btn_day.setOnClickListener(this);
-        btn_night.setOnClickListener(this);
+        BottomNavigationView navigationView = (BottomNavigationView) findViewById(R.id.navigation);
+        navigationView.setOnNavigationItemSelectedListener(this);
     }
 
     private void initSchema() {
@@ -61,14 +59,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onClick(View v) {
-        int id = v.getId();
-        if (id == R.id.btn_day) {
-            TtCloudManager.setDayTheme();
-            return;
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.navigation_day:
+                TtCloudManager.setDayTheme();
+                break;
+            case R.id.navigation_night:
+                TtCloudManager.setNightTheme();
+                break;
         }
-        if (id == R.id.btn_night) {
-            TtCloudManager.setNightTheme();
-        }
+        return false;
     }
 }
