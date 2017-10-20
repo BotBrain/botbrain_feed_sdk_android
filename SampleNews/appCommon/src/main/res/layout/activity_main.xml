@@ -35,35 +35,4 @@
         android:background="?android:attr/windowBackground"
         app:menu="@menu/navigation" />
 
-    <!--
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:visibility="gone"
-        android:background="#000000" />
-    <LinearLayout
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_day"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="日间模式" />
-
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_night"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="夜间模式" />
-
-    </LinearLayout>
-
-    -->
-
-
 </LinearLayout>
