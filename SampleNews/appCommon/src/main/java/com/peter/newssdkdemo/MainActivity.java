@@ -1,73 +1,81 @@
 package com.peter.newssdkdemo;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.FragmentManager;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import ai.botbrain.ttcloud.api.TtCloudManager;
-import ai.botbrain.ttcloud.sdk.view.activity.TsdH5ReaderOnWvActivity;
-import ai.botbrain.ttcloud.sdk.view.fragment.IndexFragment;
-
-/**
- * 在线文档地址：https://lugq.gitbooks.io/bot_news_document/content/
- */
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private IndexFragment mNewsIndexFragment;
+    private enum TabFragment {
+        practice(R.id.navigation_practice, PractiveFragment.class),
+        styles(R.id.navigation_style, StyleFragment.class),
+        using(R.id.navigation_using, UseFragment.class);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mNewsIndexFragment = new IndexFragment();
+        private Fragment fragment;
+        private final int menuId;
+        private final Class<? extends Fragment> clazz;
 
-        initView();
-        initSchema();
-
-        if (!mNewsIndexFragment.isAdded()) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.container, mNewsIndexFragment);
-            fragmentTransaction.commit();
+        TabFragment(@IdRes int menuId, Class<? extends Fragment> clazz) {
+            this.menuId = menuId;
+            this.clazz = clazz;
         }
-    }
 
-    private void initView() {
-        BottomNavigationView navigationView = (BottomNavigationView) findViewById(R.id.navigation);
-        navigationView.setOnNavigationItemSelectedListener(this);
-    }
+        @NonNull
+        public Fragment fragment() {
+            if (fragment == null) {
+                try {
+                    fragment = clazz.newInstance();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    fragment = new Fragment();
+                }
+            }
+            return fragment;
+        }
 
-    private void initSchema() {
-        Intent intent = getIntent();
-        String action = intent.getAction();
-        if (Intent.ACTION_VIEW.equals(action)) {
-            Uri uri = intent.getData();
-            if (uri != null) {
-                String queryString = uri.getQuery();
-                String url = "https://bkd.botbrain.ai" + uri.getPath() + "?" + queryString + "&platform=android&type=2";
-                intent.setClass(this, TsdH5ReaderOnWvActivity.class);
-                intent.putExtra("url", url);
-                startActivity(intent);
+        public static TabFragment from(int itemId) {
+            for (TabFragment fragment : values()) {
+                if (fragment.menuId == itemId) {
+                    return fragment;
+                }
+            }
+            return styles;
+        }
+
+        public static void onDestroy() {
+            for (TabFragment fragment : values()) {
+                fragment.fragment = null;
             }
         }
     }
 
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        BottomNavigationView navigationView = (BottomNavigationView) findViewById(R.id.navigation);
+        navigationView.setOnNavigationItemSelectedListener(this);
+        navigationView.setSelectedItemId(R.id.navigation_practice);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        TabFragment.onDestroy();
+    }
+
+    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.navigation_day:
-                TtCloudManager.setDayTheme();
-                break;
-            case R.id.navigation_night:
-                TtCloudManager.setNightTheme();
-                break;
-        }
-        return false;
+        getSupportFragmentManager()
+                .beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.container,TabFragment.from(item.getItemId()).fragment())
+                .commit();
+        return true;
     }
 }
