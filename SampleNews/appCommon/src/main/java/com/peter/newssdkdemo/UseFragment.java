@@ -30,8 +30,7 @@ import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 public class UseFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     private enum Item {
-        Watting("待buchong ", BasicActivity.class),
-        //AdSettings("向feed流中添加广告", AdSettingActivity.class),
+        Wait("待补充 ", BasicActivity.class),
         ;
 
         public String name;

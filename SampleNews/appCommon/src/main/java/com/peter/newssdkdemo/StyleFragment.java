@@ -30,7 +30,7 @@ import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 public class StyleFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     private enum Item {
-        watting("待补充", BasicActivity.class),
+        Wait("待补充", BasicActivity.class),
         ;
 
         public String name;
