@@ -1,6 +1,11 @@
 <resources>
-    <string name="app_name">图文测试工程</string>
+    <string name="app_name">botbrain_feed_sdk</string>
 
     <string name="day">日间模式</string>
     <string name="night">夜间模式</string>
+
+    <string name="practive">实战</string>
+    <string name="style">样式</string>
+    <string name="using">使用</string>
+
 </resources>
