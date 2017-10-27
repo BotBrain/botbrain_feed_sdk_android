@@ -24,7 +24,7 @@ public class TipsStyleActivity extends AppCompatActivity implements Toolbar.OnMe
         setContentView(R.layout.activity_style_tip);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.inflateMenu(R.menu.setting_menu);
+        toolbar.inflateMenu(R.menu.menu_tip);
         toolbar.setOnMenuItemClickListener(this);
 
         mNewsIndexFragment = new IndexFragment();
@@ -41,9 +41,9 @@ public class TipsStyleActivity extends AppCompatActivity implements Toolbar.OnMe
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
-            /** 修改字体大小 */
-            case R.id.item_size:
-                mNewsIndexFragment.setTabTextSize(10, 20);
+            /** 设置推荐成功提示语 */
+            case R.id.item_suc_tip:
+                mNewsIndexFragment.setTextTipSuccess("我又更新了", "条重磅消息!");
                 break;
             /**设置颜色**/
             case R.id.item_color:

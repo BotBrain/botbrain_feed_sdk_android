@@ -28,7 +28,7 @@ public class TabLayoutStyleActivity extends AppCompatActivity implements Toolbar
         tv_title.setText("设置滑动标签样式");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.inflateMenu(R.menu.setting_menu);
+        toolbar.inflateMenu(R.menu.menu_tip);
         toolbar.setOnMenuItemClickListener(this);
 
         mNewsIndexFragment = new IndexFragment();
