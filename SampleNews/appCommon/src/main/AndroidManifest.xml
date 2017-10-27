@@ -28,6 +28,7 @@
         <activity android:name="com.botbrain.demo.activity.AdSettingActivity"/>
         <activity android:name="com.botbrain.demo.activity.TabLayoutStyleActivity"/>
         <activity android:name="com.botbrain.demo.activity.style.TipsStyleActivity"/>
+        <activity android:name="com.botbrain.demo.activity.style.ToolBarStyleActivity"/>
     </application>
 
 </manifest>

@@ -25,7 +25,7 @@ public class AdSettingActivity extends AppCompatActivity implements OnDynamicVie
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ad_setting);
+        setContentView(R.layout.activity_tablayout_style);
         mNewsIndexFragment = new IndexFragment();
         mNewsIndexFragment.setCustomHolder(new MyCustomHolder());
         mNewsIndexFragment.setOnRefreshListener(this);

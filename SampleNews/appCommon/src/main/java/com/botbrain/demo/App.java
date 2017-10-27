@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.botbrain.demo.listener.MyReadNewsActivityListener;
+
 import ai.botbrain.ttcloud.api.TtCloudListener;
 import ai.botbrain.ttcloud.api.TtCloudManager;
 import ai.botbrain.ttcloud.api.TtcClient;
@@ -34,6 +36,7 @@ public class App extends Application {
         TtcClient client = new TtcClient.Builder()
                 .setLogEnable(true)
                 .hideLikeView()
+                .setReadNewsActivityListener(new MyReadNewsActivityListener())
                 .build();
         TtCloudManager.init(this, client);
 

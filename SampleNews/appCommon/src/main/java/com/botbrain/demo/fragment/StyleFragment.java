@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import com.botbrain.demo.R;
 import com.botbrain.demo.activity.TabLayoutStyleActivity;
 import com.botbrain.demo.activity.style.TipsStyleActivity;
+import com.botbrain.demo.activity.style.ToolBarStyleActivity;
 import com.botbrain.demo.adapter.BaseRecyclerAdapter;
 import com.botbrain.demo.adapter.SmartViewHolder;
 
@@ -36,6 +37,7 @@ public class StyleFragment extends Fragment implements AdapterView.OnItemClickLi
     private enum Item {
         TabLayout("修改新闻首页滑动标签样式", TabLayoutStyleActivity.class),
         Tips("修改刷新后的提示", TipsStyleActivity.class),
+        ToolBarStyle("新闻阅读页面导航栏样式修改", ToolBarStyleActivity.class),
         ;
 
         public String name;

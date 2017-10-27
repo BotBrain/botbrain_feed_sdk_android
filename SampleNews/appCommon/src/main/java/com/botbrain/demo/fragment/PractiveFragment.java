@@ -22,6 +22,10 @@ import com.botbrain.demo.adapter.SmartViewHolder;
 
 import java.util.Arrays;
 
+import ai.botbrain.ttcloud.api.TtCloudManager;
+import ai.botbrain.ttcloud.sdk.view.activity.ReadNewsActivity;
+import ai.botbrain.ttcloud.sdk.view.activity.SearchNewsActivity;
+
 import static android.R.layout.simple_list_item_2;
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 
@@ -36,6 +40,8 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
     private enum Item {
         Basic("基础集成(日/夜间模式切换)", BasicActivity.class),
         AdSettings("向feed流中添加广告", AdSettingActivity.class),
+        OpenReadNews("打开新闻阅读页面", ReadNewsActivity.class),
+        OpenSearchNews("打开新闻搜索页面", SearchNewsActivity.class),
         ;
 
         public String name;
@@ -78,6 +84,11 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if ((Item.values()[position].clazz) == ReadNewsActivity.class) {
+            /**打开阅读页**/
+            TtCloudManager.openReadNews(getActivity(), "AODgzMTExNDM3Njg");
+            return;
+        }
         startActivity(new Intent(getContext(), Item.values()[position].clazz));
     }
 }

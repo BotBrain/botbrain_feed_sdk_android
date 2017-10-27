@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.botbrain.demo.R;
 
@@ -22,10 +21,7 @@ public class TabLayoutStyleActivity extends AppCompatActivity implements Toolbar
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ad_setting);
-
-        TextView tv_title = (TextView) findViewById(R.id.tv_title);
-        tv_title.setText("设置滑动标签样式");
+        setContentView(R.layout.activity_tablayout_style);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.menu_tip);
