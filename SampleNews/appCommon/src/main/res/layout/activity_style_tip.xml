@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
-        android:titleTextColor="#ffffff"
-        app:title="设置" />
+        app:title="@string/title_tip" />
 
     <FrameLayout
         android:id="@+id/container"

@@ -1,9 +1,11 @@
-package com.peter.newssdkdemo;
+package com.botbrain.demo.adapter;
 
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.botbrain.demo.R;
 
 import java.util.List;
 

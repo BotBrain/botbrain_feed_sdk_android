@@ -1,6 +1,7 @@
-package com.peter.newssdkdemo;
+package com.botbrain.demo.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,8 +14,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
-import com.peter.newssdkdemo.adapter.BaseRecyclerAdapter;
-import com.peter.newssdkdemo.adapter.SmartViewHolder;
+import com.botbrain.demo.activity.AdSettingActivity;
+import com.botbrain.demo.activity.BasicActivity;
+import com.botbrain.demo.R;
+import com.botbrain.demo.adapter.BaseRecyclerAdapter;
+import com.botbrain.demo.adapter.SmartViewHolder;
 
 import java.util.Arrays;
 
@@ -27,10 +31,11 @@ import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
  * Date: 2017/10/20.
  */
 
-public class StyleFragment extends Fragment implements AdapterView.OnItemClickListener {
+public class PractiveFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     private enum Item {
-        Wait("待补充", BasicActivity.class),
+        Basic("基础集成(日/夜间模式切换)", BasicActivity.class),
+        AdSettings("向feed流中添加广告", AdSettingActivity.class),
         ;
 
         public String name;
@@ -45,7 +50,7 @@ public class StyleFragment extends Fragment implements AdapterView.OnItemClickLi
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_style, container, false);
+        return inflater.inflate(R.layout.fragment_practive, container, false);
     }
 
     @Override
@@ -73,6 +78,6 @@ public class StyleFragment extends Fragment implements AdapterView.OnItemClickLi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        //startActivity(new Intent(getContext(), Item.values()[position].clazz));
+        startActivity(new Intent(getContext(), Item.values()[position].clazz));
     }
 }

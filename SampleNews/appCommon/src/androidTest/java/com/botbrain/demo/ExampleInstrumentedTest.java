@@ -1,4 +1,4 @@
-package com.peter.newssdkdemo;
+package com.botbrain.demo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

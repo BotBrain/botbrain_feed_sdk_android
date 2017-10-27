@@ -1,4 +1,4 @@
-package com.peter.newssdkdemo;
+package com.botbrain.demo.fragment;
 
 
 import android.os.Bundle;
@@ -13,8 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
-import com.peter.newssdkdemo.adapter.BaseRecyclerAdapter;
-import com.peter.newssdkdemo.adapter.SmartViewHolder;
+import com.botbrain.demo.activity.BasicActivity;
+import com.botbrain.demo.R;
+import com.botbrain.demo.adapter.BaseRecyclerAdapter;
+import com.botbrain.demo.adapter.SmartViewHolder;
 
 import java.util.Arrays;
 

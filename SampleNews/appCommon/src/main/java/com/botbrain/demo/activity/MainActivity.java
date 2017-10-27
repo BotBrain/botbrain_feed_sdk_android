@@ -1,4 +1,4 @@
-package com.peter.newssdkdemo;
+package com.botbrain.demo.activity;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -8,6 +8,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+
+import com.botbrain.demo.R;
+import com.botbrain.demo.fragment.StyleFragment;
+import com.botbrain.demo.fragment.UseFragment;
+import com.botbrain.demo.fragment.PractiveFragment;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 

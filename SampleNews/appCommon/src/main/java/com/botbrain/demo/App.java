@@ -1,4 +1,4 @@
-package com.peter.newssdkdemo;
+package com.botbrain.demo;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -21,8 +21,8 @@ import ai.botbrain.ttcloud.api.TtcClient;
  * Date: 17/4/17.
  */
 
-public class TestApplication extends Application {
-    private static final String TAG = TestApplication.class.getSimpleName();
+public class App extends Application {
+    private static final String TAG = App.class.getSimpleName();
 
     private static final String userId = "121";
     private static final String userNick = "孙悟空";

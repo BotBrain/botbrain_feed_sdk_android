@@ -1,10 +1,13 @@
-package com.peter.newssdkdemo;
+package com.botbrain.demo.activity;
 
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+
+import com.botbrain.demo.adapter.MyCustomHolder;
+import com.botbrain.demo.R;
 
 import java.util.List;
 
