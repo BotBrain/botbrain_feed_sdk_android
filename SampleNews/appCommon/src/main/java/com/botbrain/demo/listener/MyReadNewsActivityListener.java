@@ -1,7 +1,6 @@
 package com.botbrain.demo.listener;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.app.Activity;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.MenuItem;
@@ -66,13 +65,35 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
         builder.show();
     }
 
+    /********************************* 声明周期回调 ************************************/
     @Override
-    public void onDestroy() {
-        Log.i(TAG, "onDestroy()");
+    public void onCreate(Activity activity) {
+        Log.i(TAG, "onCreate()");
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        Log.i(TAG, "onCreate()");
+    public void onStart(Activity activity) {
+        Log.i(TAG, "onStart()");
     }
+
+    @Override
+    public void onResume(Activity activity) {
+        Log.i(TAG, "onResume()");
+    }
+
+    @Override
+    public void onPause(Activity activity) {
+        Log.i(TAG, "onPause()");
+    }
+
+    @Override
+    public void onStop(Activity activity) {
+        Log.i(TAG, "onStop()");
+    }
+
+    @Override
+    public void onDestroy(Activity activity) {
+        Log.i(TAG, "onDestroy()");
+    }
+
 }
