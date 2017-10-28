@@ -24,7 +24,7 @@ public class TabLayoutStyleActivity extends AppCompatActivity implements Toolbar
         setContentView(R.layout.activity_tablayout_style);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.inflateMenu(R.menu.menu_tip);
+        toolbar.inflateMenu(R.menu.menu_style_tablayout);
         toolbar.setOnMenuItemClickListener(this);
 
         mNewsIndexFragment = new IndexFragment();
@@ -41,6 +41,10 @@ public class TabLayoutStyleActivity extends AppCompatActivity implements Toolbar
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
+            /** 隐藏滑动标签控件 **/
+            case R.id.item_hide:
+                mNewsIndexFragment.hideTabLayout();
+                break;
             /** 修改字体大小 */
             case R.id.item_size:
                 mNewsIndexFragment.setTabTextSize(10, 20);
