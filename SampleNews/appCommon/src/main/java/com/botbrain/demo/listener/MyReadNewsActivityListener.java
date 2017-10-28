@@ -41,7 +41,27 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
         Log.i(TAG, json);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
-        builder.setTitle("回调信息");
+        builder.setTitle("回调信息(onClickMenuItem)");
+        builder.setMessage(json);
+        builder.show();
+    }
+
+    @Override
+    public void onClickShare(String json) {
+        Log.i(TAG, json);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
+        builder.setTitle("回调信息(onClickShare)");
+        builder.setMessage(json);
+        builder.show();
+    }
+
+    @Override
+    public void onClickLike(String json) {
+        Log.i(TAG, json);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
+        builder.setTitle("回调信息(onClickLike)");
         builder.setMessage(json);
         builder.show();
     }

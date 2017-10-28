@@ -1,10 +1,13 @@
 package com.botbrain.demo.fragment;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,14 +17,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
+import com.botbrain.demo.R;
 import com.botbrain.demo.activity.AdSettingActivity;
 import com.botbrain.demo.activity.BasicActivity;
-import com.botbrain.demo.R;
 import com.botbrain.demo.adapter.BaseRecyclerAdapter;
 import com.botbrain.demo.adapter.SmartViewHolder;
 
 import java.util.Arrays;
 
+import ai.botbrain.ttcloud.api.TtCloudListener;
 import ai.botbrain.ttcloud.api.TtCloudManager;
 import ai.botbrain.ttcloud.sdk.view.activity.ReadNewsActivity;
 import ai.botbrain.ttcloud.sdk.view.activity.SearchNewsActivity;
@@ -39,10 +43,10 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
 
     private enum Item {
         Basic("基础集成(日/夜间模式切换)", BasicActivity.class),
+        Login("登录和注销操作", BasicActivity.class),
         AdSettings("向feed流中添加广告", AdSettingActivity.class),
         OpenReadNews("打开新闻阅读页面", ReadNewsActivity.class),
-        OpenSearchNews("打开新闻搜索页面", SearchNewsActivity.class),
-        ;
+        OpenSearchNews("打开新闻搜索页面", SearchNewsActivity.class),;
 
         public String name;
         public Class<?> clazz;
@@ -89,6 +93,38 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
             TtCloudManager.openReadNews(getActivity(), "AODgzMTExNDM3Njg");
             return;
         }
+        if ((Item.values()[position].name().equals("Login"))) {
+            AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(getActivity());
+            builder.setTitle("Material Design Dialog");
+            builder.setItems(new String[]{"登录操作", "注销操作", "判断登录状态"}, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if (which == 0) {
+                        login();
+                    } else if (which == 1) {
+                        TtCloudManager.logout();
+                    } else if (which == 2) {
+                        boolean isLogin = TtCloudManager.isLogin();
+                        Snackbar.make(getView(), "登录状态" + isLogin, Snackbar.LENGTH_LONG).show();
+                    }
+                }
+            });
+            builder.show();
+            return;
+        }
         startActivity(new Intent(getContext(), Item.values()[position].clazz));
+    }
+
+
+    private static final String userId = "121";
+    private static final String userNick = "孙悟空";
+    private static final String avatar = "21323";
+
+    public void login() {
+        TtCloudListener.User user = new TtCloudListener.User();
+        user.setUserAvatar(avatar);
+        user.setUserId(userId);
+        user.setUserNickName(userNick);
+        TtCloudManager.login(user);
     }
 }
