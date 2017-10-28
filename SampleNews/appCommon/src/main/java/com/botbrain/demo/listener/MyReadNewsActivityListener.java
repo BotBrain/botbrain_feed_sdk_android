@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import com.botbrain.demo.R;
 
 import ai.botbrain.ttcloud.api.ReadNewsActivityListener;
-import ai.botbrain.ttcloud.sdk.view.activity.ReadNewsActivity;
+import ai.botbrain.ttcloud.api.ReadNewsView;
 
 /**
  * Description：
@@ -20,19 +20,19 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
 
     private static final String TAG = MyReadNewsActivityListener.class.getSimpleName();
 
-    ReadNewsActivity mActivity;
+    private Activity mActivity;
 
     @Override
-    public void getReadNewsActivity(ReadNewsActivity activity) {
+    public void getReadNewsView(Activity activity, ReadNewsView view) {
         mActivity = activity;
         /** 设置导航栏背景颜色 */
-        activity.setToolBarBackgroundColor(activity.getResources().getColor(R.color.color_e19797));
+        view.setToolBarBackgroundColor(activity.getResources().getColor(R.color.color_e19797));
         /** 设置导航栏返回图标 **/
-        activity.setToolBarNavigationIcon(R.drawable.ic_time_to_leave_black_24dp);
+        view.setToolBarNavigationIcon(R.drawable.ic_time_to_leave_black_24dp);
         /** 设置导航栏右侧菜单 **/
         //activity.setToolBarInflateMenu(R.menu.menu_tip);
         /** 设置导航栏标题颜色 **/
-        activity.setToolBarTitleColor(activity.getResources().getColor(R.color.colorPrimary));
+        view.setToolBarTitleColor(activity.getResources().getColor(R.color.colorPrimary));
     }
 
     @Override
