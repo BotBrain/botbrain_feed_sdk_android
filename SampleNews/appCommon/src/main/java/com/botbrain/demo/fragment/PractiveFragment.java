@@ -94,7 +94,6 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
         }
         if ((Item.values()[position].name().equals("Login"))) {
             AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(getActivity());
-            builder.setTitle("Material Design Dialog");
             builder.setItems(new String[]{"登录操作", "注销操作", "判断登录状态"}, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

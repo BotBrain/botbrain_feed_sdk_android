@@ -38,6 +38,7 @@ public class StyleFragment extends Fragment implements AdapterView.OnItemClickLi
         TabLayout("修改新闻首页滑动标签样式", TabLayoutStyleActivity.class),
         Tips("修改刷新后的提示", TipsStyleActivity.class),
         ToolBarStyle("新闻阅读页面导航栏样式修改", ToolBarStyleActivity.class),
+        //HideCommentStyle("隐藏新闻阅读页的底部评论框", ToolBarStyleActivity.class),
         ;
 
         public String name;

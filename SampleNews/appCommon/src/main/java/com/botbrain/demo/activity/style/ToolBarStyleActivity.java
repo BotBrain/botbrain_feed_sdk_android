@@ -16,7 +16,7 @@ import com.botbrain.demo.adapter.SmartViewHolder;
 
 import java.util.Arrays;
 
-import ai.botbrain.ttcloud.api.TtCloudManager;
+import ai.botbrain.ttcloud.api.BotBrain;
 
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 
@@ -68,7 +68,7 @@ public class ToolBarStyleActivity extends AppCompatActivity implements AdapterVi
 
         }
 
-        TtCloudManager.openReadNews(this, "AODgzMTExNDM3Njg");
+        BotBrain.newInstance().openReadNews(this, "AODgzMTExNDM3Njg");
     }
 
 }
