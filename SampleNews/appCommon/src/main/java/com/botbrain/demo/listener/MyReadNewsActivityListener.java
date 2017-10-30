@@ -28,7 +28,7 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
         /** 设置导航栏背景颜色 */
         view.setToolBarBackgroundColor(activity.getResources().getColor(R.color.color_e19797));
         /** 设置导航栏返回图标 **/
-        view.setToolBarNavigationIcon(R.drawable.ic_time_to_leave_black_24dp);
+        //view.setToolBarNavigationIcon(R.drawable.ic_time_to_leave_black_24dp);
         /** 设置导航栏右侧菜单 **/
         //activity.setToolBarInflateMenu(R.menu.menu_tip);
         /** 设置导航栏标题颜色 **/

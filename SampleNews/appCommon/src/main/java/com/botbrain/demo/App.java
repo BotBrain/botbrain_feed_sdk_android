@@ -3,6 +3,7 @@ package com.botbrain.demo;
 import android.app.Application;
 
 import com.botbrain.demo.listener.MyReadNewsActivityListener;
+import com.botbrain.demo.listener.MySearchNewsActivityListener;
 
 import ai.botbrain.ttcloud.api.TtCloudManager;
 import ai.botbrain.ttcloud.api.TtcClient;
@@ -22,6 +23,7 @@ public class App extends Application {
                 .setLogEnable(true)
                 .hideLikeView()
                 .setReadNewsActivityListener(new MyReadNewsActivityListener())
+                .setSearNewsActivityListener(new MySearchNewsActivityListener())
                 .build();
         TtCloudManager.init(this, client);
 
