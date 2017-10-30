@@ -80,7 +80,7 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
         builder.show();
     }
 
-    /********************************* 声明周期回调 ************************************/
+    /********************************* 生命周期回调 ************************************/
     @Override
     public void onCreate(Activity activity) {
         Log.i(TAG, "onCreate()");
