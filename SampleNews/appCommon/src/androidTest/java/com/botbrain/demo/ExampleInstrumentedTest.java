@@ -23,4 +23,8 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.peter.newssdkdemo", appContext.getPackageName());
     }
+
+    public void main() {
+        System.out.print("heheh");
+    }
 }
