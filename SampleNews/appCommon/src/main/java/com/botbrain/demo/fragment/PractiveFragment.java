@@ -41,7 +41,7 @@ import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 public class PractiveFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     private enum Item {
-        Basic("基础集成(日/夜间模式切换)", BasicActivity.class),
+        //Basic("基础集成(日/夜间模式切换)", BasicActivity.class),
         Login("登录和注销操作", BasicActivity.class),
         AdSettings("向feed流中添加广告", AdSettingActivity.class),
         OpenReadNews("打开新闻阅读页面", ReadNewsActivity.class),
