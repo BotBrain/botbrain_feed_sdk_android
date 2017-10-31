@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.botbrain.demo.App;
 import com.botbrain.demo.R;
+import com.botbrain.demo.listener.MyNewsFragmentListener;
 
 import ai.botbrain.ttcloud.sdk.view.fragment.IndexFragment;
 
@@ -18,10 +20,13 @@ public class TabLayoutStyleActivity extends AppCompatActivity implements Toolbar
 
     IndexFragment mNewsIndexFragment;
 
+    MyNewsFragmentListener myNewsFragmentListener;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tablayout_style);
+        myNewsFragmentListener = ((App)getApplication()).getMyNewsFragmentListener();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.menu_style_tablayout);
@@ -43,36 +48,36 @@ public class TabLayoutStyleActivity extends AppCompatActivity implements Toolbar
         switch (item.getItemId()) {
             /** 隐藏滑动标签控件 **/
             case R.id.item_hide:
-                mNewsIndexFragment.hideTabLayout();
+                myNewsFragmentListener.mNewsView.hideTabLayout();
                 break;
             /** 修改字体大小 */
             case R.id.item_size:
-                mNewsIndexFragment.setTabTextSize(10, 20);
+                myNewsFragmentListener.mNewsView.setTabTextSize(10, 20);;
                 break;
             /**设置颜色**/
             case R.id.item_color:
-                mNewsIndexFragment.setTabTextColors(getResources().getColor(R.color.color_normal),
+                myNewsFragmentListener.mNewsView.setTabTextColors(getResources().getColor(R.color.color_normal),
                         getResources().getColor(R.color.color_select));
                 break;
             /**设置指示器高度***/
             case R.id.item_indicator_height:
-                mNewsIndexFragment.setTabIndicatorHeight(0);
+                myNewsFragmentListener.mNewsView.setTabIndicatorHeight(0);;
                 break;
             /**设置滑动标签布局高度***/
             case R.id.item_layout_height:
-                mNewsIndexFragment.setTabLayoutHeight(50);
+                myNewsFragmentListener.mNewsView.setTabLayoutHeight(50);
                 break;
             /**设置背景颜色**/
             case R.id.item_bg_color:
-                mNewsIndexFragment.setTabBackground(getResources().getColor(R.color.color_e19797));
+                myNewsFragmentListener.mNewsView.setTabBackground(getResources().getColor(R.color.color_e19797));
                 break;
             /**设置间隔**/
             case R.id.item_space:
-                mNewsIndexFragment.setTabSpace(10);
+                myNewsFragmentListener.mNewsView.setTabSpace(10);
                 break;
             /**设置指示器颜色**/
             case R.id.item_indicator_color:
-                mNewsIndexFragment.setTabIndicatorColor(getResources().getColor(R.color.color_select));
+                myNewsFragmentListener.mNewsView.setTabIndicatorColor(getResources().getColor(R.color.color_select));
                 break;
 
         }

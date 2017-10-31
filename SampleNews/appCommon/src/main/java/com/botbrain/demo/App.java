@@ -2,6 +2,7 @@ package com.botbrain.demo;
 
 import android.app.Application;
 
+import com.botbrain.demo.listener.MyNewsFragmentListener;
 import com.botbrain.demo.listener.MyReadNewsActivityListener;
 import com.botbrain.demo.listener.MySearchNewsActivityListener;
 
@@ -16,11 +17,18 @@ import ai.botbrain.ttcloud.api.TtcClient;
 
 public class App extends Application {
 
+    private MyNewsFragmentListener myNewsFragmentListener;
+
     @Override
     public void onCreate() {
         super.onCreate();
+
+        myNewsFragmentListener = new MyNewsFragmentListener();
+        setMyNewsFragmentListener(myNewsFragmentListener);
+
         TtcClient client = new TtcClient.Builder()
                 .setLogEnable(true)
+                .setNewsFragmentListener(myNewsFragmentListener)
                 .setReadNewsActivityListener(new MyReadNewsActivityListener())
                 .setSearNewsActivityListener(new MySearchNewsActivityListener())
                 .build();
@@ -29,4 +37,11 @@ public class App extends Application {
         //TtCloudManager.init(this);
     }
 
+    public MyNewsFragmentListener getMyNewsFragmentListener() {
+        return myNewsFragmentListener;
+    }
+
+    public void setMyNewsFragmentListener(MyNewsFragmentListener myNewsFragmentListener) {
+        this.myNewsFragmentListener = myNewsFragmentListener;
+    }
 }
