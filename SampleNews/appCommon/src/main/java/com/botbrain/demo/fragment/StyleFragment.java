@@ -1,4 +1,4 @@
-package com.peter.newssdkdemo;
+package com.botbrain.demo.fragment;
 
 
 import android.content.Intent;
@@ -14,10 +14,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
-import com.peter.newssdkdemo.adapter.BaseRecyclerAdapter;
-import com.peter.newssdkdemo.adapter.SmartViewHolder;
+import com.botbrain.demo.R;
+import com.botbrain.demo.activity.TabLayoutStyleActivity;
+import com.botbrain.demo.activity.style.TipsStyleActivity;
+import com.botbrain.demo.activity.style.ToolBarStyleActivity;
+import com.botbrain.demo.adapter.BaseRecyclerAdapter;
+import com.botbrain.demo.adapter.SmartViewHolder;
 
 import java.util.Arrays;
+
+import ai.botbrain.ttcloud.api.BotBrain;
 
 import static android.R.layout.simple_list_item_2;
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
@@ -28,11 +34,14 @@ import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
  * Date: 2017/10/20.
  */
 
-public class PractiveFragment extends Fragment implements AdapterView.OnItemClickListener {
+public class StyleFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     private enum Item {
-        Basic("基础集成(日/夜间模式切换)", BasicActivity.class),
-        AdSettings("向feed流中添加广告", AdSettingActivity.class),
+        TabLayout("修改新闻首页滑动标签样式", TabLayoutStyleActivity.class),
+        Tips("修改刷新后的提示", TipsStyleActivity.class),
+        ReadNewsView("连续点击状态栏3次进入自定义样式模式", ToolBarStyleActivity.class),
+        SearchNewsView("连续点击状态栏3次进入自定义样式模式", ToolBarStyleActivity.class),
+
         ;
 
         public String name;
@@ -47,7 +56,7 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_practive, container, false);
+        return inflater.inflate(R.layout.fragment_style, container, false);
     }
 
     @Override
@@ -75,6 +84,13 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if (Item.values()[position].name().equals("ReadNewsView")) {
+            BotBrain.newInstance().openReadNews(getActivity(), "AODgzMTExNDM3Njg");
+            return;
+        } else if (Item.values()[position].name().equals("SearchNewsView")) {
+            BotBrain.newInstance().openSearchNews(getActivity());
+            return;
+        }
         startActivity(new Intent(getContext(), Item.values()[position].clazz));
     }
 }

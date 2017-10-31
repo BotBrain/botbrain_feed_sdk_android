@@ -1,4 +1,4 @@
-package com.peter.newssdkdemo.adapter;
+package com.botbrain.demo.adapter;
 
 import android.database.DataSetObservable;
 import android.database.DataSetObserver;

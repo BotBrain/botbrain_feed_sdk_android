@@ -1,4 +1,4 @@
-package com.peter.newssdkdemo;
+package com.botbrain.demo.activity.practice;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -7,10 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.botbrain.demo.R;
+
 import ai.botbrain.ttcloud.api.TtCloudManager;
 import ai.botbrain.ttcloud.sdk.view.fragment.IndexFragment;
 
-public class BasicActivity extends AppCompatActivity {
+public class LoginOptionActivity extends AppCompatActivity {
 
     IndexFragment mNewsIndexFragment;
 
@@ -19,7 +21,7 @@ public class BasicActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.inflateMenu(R.menu.setting_menu);
+        toolbar.inflateMenu(R.menu.menu_tip);
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {

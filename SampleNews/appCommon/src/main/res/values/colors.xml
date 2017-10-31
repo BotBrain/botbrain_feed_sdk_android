@@ -5,4 +5,9 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="colorTextAssistant">#888888</color>
+
+    <color name="color_normal">#030000</color>
+    <color name="color_select">#f50404</color>
+    <color name="color_e19797">#e19797</color>
+
 </resources>

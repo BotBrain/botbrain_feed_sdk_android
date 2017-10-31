@@ -1,4 +1,4 @@
-package com.peter.newssdkdemo;
+package com.botbrain.demo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -22,5 +22,9 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getTargetContext();
 
         assertEquals("com.peter.newssdkdemo", appContext.getPackageName());
+    }
+
+    public void main() {
+        System.out.print("heheh");
     }
 }
