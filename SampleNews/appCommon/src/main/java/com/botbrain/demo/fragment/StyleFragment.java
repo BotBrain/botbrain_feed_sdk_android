@@ -23,6 +23,8 @@ import com.botbrain.demo.adapter.SmartViewHolder;
 
 import java.util.Arrays;
 
+import ai.botbrain.ttcloud.api.BotBrain;
+
 import static android.R.layout.simple_list_item_2;
 import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 
@@ -37,8 +39,9 @@ public class StyleFragment extends Fragment implements AdapterView.OnItemClickLi
     private enum Item {
         TabLayout("修改新闻首页滑动标签样式", TabLayoutStyleActivity.class),
         Tips("修改刷新后的提示", TipsStyleActivity.class),
-        ToolBarStyle("新闻阅读页面导航栏样式修改", ToolBarStyleActivity.class),
-        //HideCommentStyle("隐藏新闻阅读页的底部评论框", ToolBarStyleActivity.class),
+        ReadNewsView("连续点击状态栏3次进入自定义样式模式", ToolBarStyleActivity.class),
+        SearchNewsView("连续点击状态栏3次进入自定义样式模式", ToolBarStyleActivity.class),
+
         ;
 
         public String name;
@@ -81,6 +84,13 @@ public class StyleFragment extends Fragment implements AdapterView.OnItemClickLi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        if (Item.values()[position].name().equals("ReadNewsView")) {
+            BotBrain.newInstance().openReadNews(getActivity(), "AODgzMTExNDM3Njg");
+            return;
+        } else if (Item.values()[position].name().equals("SearchNewsView")) {
+            BotBrain.newInstance().openSearchNews(getActivity());
+            return;
+        }
         startActivity(new Intent(getContext(), Item.values()[position].clazz));
     }
 }
