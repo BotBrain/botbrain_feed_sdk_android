@@ -39,6 +39,8 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
         //view.setShareImageRes(R.drawable.ic_share_black_24dp);
         /** 设置点赞的icon **/
         //view.setLikeImageRes(R.drawable.ic_thumb_up_black_24dp, R.drawable.ic_thumb_up_red_24dp);
+        /** 隐藏点赞 **/
+        view.hideLikeView();
     }
 
     @Override

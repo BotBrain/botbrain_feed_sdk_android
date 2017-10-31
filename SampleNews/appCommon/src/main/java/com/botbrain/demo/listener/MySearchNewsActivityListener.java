@@ -19,9 +19,10 @@ public class MySearchNewsActivityListener implements SearchNewsActivityListener 
 
     @Override
     public void getSearchNewsView(Activity activity, SearchNewsView view) {
-        // 这里定义搜索页面样式
+        /** 这里定义搜索页面样式 **/
         view.setToolBarNavigationIcon(R.drawable.ic_share_black_24dp);
-        view.setToolBarBackgroundColor(activity.getResources().getColor(R.color.colorPrimary));
+        /** 设置导航栏背景 **/
+        //view.setToolBarBackgroundColor(activity.getResources().getColor(R.color.colorPrimary));
     }
 
     /***********************************************/

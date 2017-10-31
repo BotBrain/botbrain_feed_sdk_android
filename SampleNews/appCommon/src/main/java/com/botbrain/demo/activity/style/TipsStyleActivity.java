@@ -43,7 +43,7 @@ public class TipsStyleActivity extends AppCompatActivity implements Toolbar.OnMe
         switch (item.getItemId()) {
             /** 设置推荐成功提示语 */
             case R.id.item_suc_tip:
-                mNewsIndexFragment.setTextTipSuccess("我又更新了", "条重磅消息!");
+                //mNewsIndexFragment.setTextTipSuccess("我又更新了", "条重磅消息!");
                 break;
             /**设置颜色**/
             case R.id.item_color:

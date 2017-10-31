@@ -21,7 +21,6 @@ public class App extends Application {
         super.onCreate();
         TtcClient client = new TtcClient.Builder()
                 .setLogEnable(true)
-                .hideLikeView()
                 .setReadNewsActivityListener(new MyReadNewsActivityListener())
                 .setSearNewsActivityListener(new MySearchNewsActivityListener())
                 .build();
