@@ -13,7 +13,7 @@
 
 **[ttcloud-1.0.0.apk](https://github.com/lugq/Bot_News_Android_SDK/releases/download/v1.2.5/ttcloud-1.2.5.apk)**
 
-<img src="https://raw.githubusercontent.com/lugq/Bot_News_Android_SDK/master/SampleNews/effectPicture/device-2017-08-18-182954.png" width = "320" height = "600" alt="图片名称" align=center /> <img src="https://raw.githubusercontent.com/lugq/Bot_News_Android_SDK/master/SampleNews/effectPicture/device-2017-08-18-183029.png" width = "320" height = "600" alt="图片名称" align=center />
+<img src="https://github.com/BotBrain/botbrain_feed_sdk_android/blob/master/SampleNews/effectPicture/Screenshot_1508494129.png" width = "320" height = "600" alt="图片名称" align=center /> <img src="https://github.com/BotBrain/botbrain_feed_sdk_android/blob/master/SampleNews/effectPicture/Screenshot_1508494182.png" width = "320" height = "600" alt="图片名称" align=center />
 
 
 ## Usage
@@ -35,7 +35,7 @@ allprojects {
 **采用标准版或是精简版可咨询相关负责人**
 ```
 // 标准版
-compile 'ai.botbrain.ttcloud:libraryTtc:1.2.5.9'
+compile 'ai.botbrain.ttcloud:libraryTtc:1.3.0.0'
 
 // 精简版
 compile 'ai.botbrain.ttcloud.lite:libraryTtc:1.2.5.9'
