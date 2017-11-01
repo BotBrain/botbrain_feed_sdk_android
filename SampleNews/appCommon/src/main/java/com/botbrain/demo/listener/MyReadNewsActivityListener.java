@@ -37,18 +37,6 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
     @Override
     public void getReadNewsView(Activity activity, ReadNewsView view) {
         mActivity = activity;
-        /** 设置导航栏返回图标 **/
-        /** 设置导航栏右侧菜单 **/
-        /** 设置导航栏标题颜色 **/
-
-        /** 隐藏底部评论框 **/
-        //view.hideComment();
-        /** 设置分享icon **/
-        //
-        /** 设置点赞的icon **/
-        //
-        /** 隐藏点赞 **/
-
     }
 
     @Override
