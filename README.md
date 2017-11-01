@@ -13,7 +13,7 @@
 
 **[ttcloud-1.0.0.apk](https://github.com/lugq/Bot_News_Android_SDK/releases/download/v1.2.5/ttcloud-1.2.5.apk)**
 
-<img src="https://github.com/BotBrain/botbrain_feed_sdk_android/blob/master/SampleNews/effectPicture/effect_pic1.gif?raw=true" width = "320" height = "600" alt="" align=center />
+<img src="https://github.com/BotBrain/botbrain_feed_sdk_android/blob/master/SampleNews/effectPicture/effect_pic1.gif?raw=true" width = "350" height = "582" alt="" align=center />
 
 ## Usage
 ### 集成
