@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
-import android.view.MenuItem;
 
 import com.botbrain.demo.R;
 
@@ -40,16 +39,6 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
     }
 
     @Override
-    public void onClickMenuItem(MenuItem item, String json) {
-        Log.i(TAG, json);
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
-        builder.setTitle("回调信息(onClickMenuItem)");
-        builder.setMessage(json);
-        builder.show();
-    }
-
-    @Override
     public void onClickShare(String json) {
         Log.i(TAG, json);
 
@@ -74,6 +63,14 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
         Log.i(TAG, json);
         AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
         builder.setTitle("回调信息(onComment)");
+        builder.setMessage(json);
+        builder.show();
+    }
+
+    @Override
+    public void onClickMore(String json) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
+        builder.setTitle("回调信息(onClickMore)");
         builder.setMessage(json);
         builder.show();
     }
