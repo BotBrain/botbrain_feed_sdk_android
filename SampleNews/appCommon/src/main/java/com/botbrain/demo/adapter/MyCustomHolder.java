@@ -9,7 +9,7 @@ import com.botbrain.demo.R;
 
 import java.util.List;
 
-import ai.botbrain.ttcloud.sdk.model.RecommendEntity;
+import ai.botbrain.ttcloud.sdk.model.RecommendNewsEntity;
 import ai.botbrain.ttcloud.sdk.util.TsdContextHolder;
 import ai.botbrain.ttcloud.sdk.view.adapter.GraphicAdapter;
 import ai.botbrain.ttcloud.sdk.view.viewholder.newsholder.CustomHolder;
@@ -25,7 +25,7 @@ public class MyCustomHolder extends CustomHolder {
     private TextView tv_custom;
 
     @Override
-    public void init(View convertView, List<RecommendEntity.Data> datas) {
+    public void init(View convertView, List<RecommendNewsEntity.Items> datas) {
         super.init(convertView, datas);
         if (convertView != null) {
             LinearLayout linearLayout = (LinearLayout) convertView.findViewById(R.id.ll_container);
@@ -46,7 +46,7 @@ public class MyCustomHolder extends CustomHolder {
 
     @Override
     public void bindData(int position, GraphicAdapter adapter) {
-        RecommendEntity.Data data = mDatas.get(position);
+        RecommendNewsEntity.Items data = mDatas.get(position);
         String str = (String) data.customContent;
 
         tv_custom.setText(str);

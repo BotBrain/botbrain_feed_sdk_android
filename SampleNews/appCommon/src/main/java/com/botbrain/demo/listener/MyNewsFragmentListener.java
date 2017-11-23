@@ -6,14 +6,12 @@ import android.util.Log;
 
 import com.botbrain.demo.adapter.MyCustomHolder;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 
 import java.util.List;
 
 import ai.botbrain.ttcloud.api.NewsFragmentListener;
 import ai.botbrain.ttcloud.api.NewsView;
-import ai.botbrain.ttcloud.sdk.model.RecommendEntity;
-import ai.botbrain.ttcloud.sdk.util.TsdContextHolder;
+import ai.botbrain.ttcloud.sdk.model.RecommendNewsEntity;
 
 /**
  * Description：
@@ -40,12 +38,12 @@ public class MyNewsFragmentListener implements NewsFragmentListener {
     }
 
     @Override
-    public void onRefresh(int position, List<RecommendEntity.Data> datas) {
+    public void onRefresh(int position, List<RecommendNewsEntity.Items> datas) {
         //自由添加广告数据
         if (position == 1) {
             // 模拟请求接口的延迟
             SystemClock.sleep(3000);
-            RecommendEntity.Data data = new RecommendEntity.Data();
+            RecommendNewsEntity.Items data = new RecommendNewsEntity.Items();
             data.type = "customType";
             data.customContent = "可以自由传入要渲染的数据";
             datas.add(0, data);
@@ -55,9 +53,11 @@ public class MyNewsFragmentListener implements NewsFragmentListener {
     @Override
     public void getRefreshLayout(RefreshLayout refreshLayout) {
         // 自定义刷新Style
+        /*
         ClassicsHeader header = new ClassicsHeader(TsdContextHolder.getContext());
         header.setEnableLastTime(false);
         ClassicsHeader.REFRESH_HEADER_REFRESHING = "啦啦啦...";
         refreshLayout.setRefreshHeader(header);
+        */
     }
 }
