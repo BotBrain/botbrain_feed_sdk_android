@@ -89,7 +89,7 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if ((Item.values()[position].clazz) == ReadNewsActivity.class) {
             /**打开阅读页**/
-            BotBrain.newInstance().openReadNews(getActivity(), "AODgzMTExNDM3Njg");
+            BotBrain.newInstance().openReadNews(getActivity(), "AODgzMjg2NzAyODA");
             return;
         }
         if ((Item.values()[position].name().equals("Login"))) {
@@ -98,7 +98,7 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     if (which == 0) {
-                        BotBrain.newInstance().login("botbrain001", "布本智能", "defaut", 10);
+                        BotBrain.newInstance().login("botbrain001", "布本智能", "defaut");
                     } else if (which == 1) {
                         BotBrain.newInstance().logout();
                     } else if (which == 2) {
