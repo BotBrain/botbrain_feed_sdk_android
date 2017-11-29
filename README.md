@@ -11,10 +11,9 @@
 
 ## Effect
 
-**[ttcloud-1.0.0.apk](https://github.com/lugq/Bot_News_Android_SDK/releases/download/v1.2.5/ttcloud-1.2.5.apk)**
+**[botbrain_feed_sdk-1.0.0.apk](https://github.com/BotBrain/botbrain_feed_sdk_android/releases/download/v1.3.0/botbrain_feed_sdk.apk)**
 
-<img src="https://github.com/BotBrain/botbrain_feed_sdk_android/blob/master/SampleNews/effectPicture/Screenshot_1508494129.png" width = "320" height = "600" alt="图片名称" align=center /> <img src="https://github.com/BotBrain/botbrain_feed_sdk_android/blob/master/SampleNews/effectPicture/Screenshot_1508494182.png" width = "320" height = "600" alt="图片名称" align=center />
-
+<img src="https://github.com/BotBrain/botbrain_feed_sdk_android/blob/master/SampleNews/effectPicture/effect_pic1.gif?raw=true" width = "350" height = "582" alt="" align=center />
 
 ## Usage
 ### 集成
@@ -85,51 +84,8 @@ public class XXApplication extends Application {
 ...
 ```
 
-5. 回调监听
-```
-TtCloudManager.setCallBack(new TtCloudListener() {
-            @Override
-            public void onBack(ImageView iv_back) {
-
-            }
-
-            @Override
-            public boolean onShare(Article article, User user, ResultCallBack callBack) {
-                return false;
-            }
-
-            @Override
-            public boolean onLiked(Article article, User user) {
-                return false;
-            }
-
-            @Override
-            public boolean onComment(Article article, User user) {
-                return false;
-            }
-        });
-```
-
-
-### IndexFragment 对外提供的接口
-1.隐藏滑动标签控件
-```
-void hideTabLayout();
-```
-
-2.控制 TabLayout 最多显示的标签个数
-```
-void setTabLayoutMaxItemCount(int maxCount);
-```
-3.向轮播图底部添加自定义视图
-```
-void addCustomView(View view);
-```
-
-4.设置 tabLayout 为 FIXED 模式
-```
-public void setTabLayout_MODE_FIXED()
-```
+## 自定义样式及回调使用
+[自定义样式及回调信息](https://github.com/BotBrain/botbrain_feed_sdk_android/wiki)
 
 ## ProGuard
 If you are using ProGuard you might need to add the following options:

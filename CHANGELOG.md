@@ -1,5 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
+## [1.3.0.0] - 2017-11-01
+### Changed
+- Demo UI展示大改版；
+- SDK修改样式接口重构；
+- SDK回调信息重构；
+- 注意：旧版开放API不多，且设计上存在一定不合理性，所以不再对其维护；
+
 ## [1.2.5.9] - 2017-10-18
 ### Changed
 - sdk命名统一；
