@@ -37,7 +37,7 @@ allprojects {
 compile 'ai.botbrain.ttcloud:libraryTtc:1.3.0.0'
 
 // 精简版
-compile 'ai.botbrain.ttcloud.lite:libraryTtc:1.2.5.9'
+compile 'ai.botbrain.ttcloud.lite:libraryTtc:1.3.0.1'
 ```
 
 
