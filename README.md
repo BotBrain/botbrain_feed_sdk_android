@@ -69,7 +69,7 @@ public class XXApplication extends Application {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mNewsIndexFragment = new IndexFragment();
+        mNewsIndexFragment = BotBrain.newInstance().getNewsFragment();
         initView();
         initSchema();
 
