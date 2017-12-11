@@ -1,7 +1,6 @@
 package com.botbrain.demo.listener;
 
 import android.app.Activity;
-import android.os.SystemClock;
 import android.util.Log;
 
 import com.botbrain.demo.adapter.MyCustomHolder;
@@ -40,6 +39,7 @@ public class MyNewsFragmentListener implements NewsFragmentListener {
     @Override
     public void onRefresh(int position, List<RecommendNewsEntity.Items> datas) {
         //自由添加广告数据
+        /*
         if (position == 1) {
             // 模拟请求接口的延迟
             SystemClock.sleep(3000);
@@ -48,6 +48,7 @@ public class MyNewsFragmentListener implements NewsFragmentListener {
             data.customContent = "可以自由传入要渲染的数据";
             datas.add(0, data);
         }
+        */
     }
 
     @Override
