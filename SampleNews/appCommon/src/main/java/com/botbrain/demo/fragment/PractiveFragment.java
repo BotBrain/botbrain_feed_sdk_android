@@ -40,6 +40,11 @@ import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 
 public class PractiveFragment extends Fragment implements AdapterView.OnItemClickListener {
 
+    private static final String mAvatar = "http://photocdn.sohu.com/20160218/mp59391866_1455765846844_6.jpeg";
+    private static final String mNickName = "周星星";
+    private static final String mUserId = "ZhouXC";
+
+
     private enum Item {
         //Basic("基础集成(日/夜间模式切换)", BasicActivity.class),
         Login("登录和注销操作", BasicActivity.class),
@@ -100,7 +105,7 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     if (which == 0) {
-                        BotBrain.newInstance().login("botbrain001", "布本智能", "defaut", new BotBrain.LoginCallback() {
+                        BotBrain.newInstance().login(mUserId, mNickName, mAvatar, new BotBrain.LoginCallback() {
                             @Override
                             public void onSuccess() {
 
