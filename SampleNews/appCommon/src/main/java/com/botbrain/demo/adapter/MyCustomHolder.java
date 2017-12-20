@@ -10,7 +10,7 @@ import com.botbrain.demo.R;
 import java.util.List;
 
 import ai.botbrain.ttcloud.sdk.model.RecommendNewsEntity;
-import ai.botbrain.ttcloud.sdk.util.TsdContextHolder;
+import ai.botbrain.ttcloud.sdk.util.ContextHolder;
 import ai.botbrain.ttcloud.sdk.view.adapter.GraphicAdapter;
 import ai.botbrain.ttcloud.sdk.view.viewholder.newsholder.CustomHolder;
 
@@ -29,7 +29,7 @@ public class MyCustomHolder extends CustomHolder {
         super.init(convertView, datas);
         if (convertView != null) {
             LinearLayout linearLayout = (LinearLayout) convertView.findViewById(R.id.ll_container);
-            View view = View.inflate(TsdContextHolder.getContext(), R.layout.ttc_customer_view, null);
+            View view = View.inflate(ContextHolder.getContext(), R.layout.ttc_customer_view, null);
 
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
             view.setLayoutParams(layoutParams);

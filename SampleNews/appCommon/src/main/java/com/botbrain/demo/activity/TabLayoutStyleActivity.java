@@ -11,6 +11,7 @@ import com.botbrain.demo.App;
 import com.botbrain.demo.R;
 import com.botbrain.demo.listener.MyNewsFragmentListener;
 
+import ai.botbrain.ttcloud.api.BotBrain;
 import ai.botbrain.ttcloud.sdk.view.fragment.IndexFragment;
 
 /**
@@ -32,7 +33,7 @@ public class TabLayoutStyleActivity extends AppCompatActivity implements Toolbar
         toolbar.inflateMenu(R.menu.menu_style_tablayout);
         toolbar.setOnMenuItemClickListener(this);
 
-        mNewsIndexFragment = new IndexFragment();
+        mNewsIndexFragment = BotBrain.newInstance().getNewsFragment();
 
         if (!mNewsIndexFragment.isAdded()) {
             FragmentManager fragmentManager = getSupportFragmentManager();

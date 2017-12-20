@@ -100,7 +100,17 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     if (which == 0) {
-                        BotBrain.newInstance().login("botbrain001", "布本智能", "defaut");
+                        BotBrain.newInstance().login("botbrain001", "布本智能", "defaut", new BotBrain.LoginCallback() {
+                            @Override
+                            public void onSuccess() {
+
+                            }
+
+                            @Override
+                            public void onFail(String error) {
+
+                            }
+                        });
                     } else if (which == 1) {
                         BotBrain.newInstance().logout();
                     } else if (which == 2) {
