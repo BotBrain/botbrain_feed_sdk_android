@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import com.botbrain.demo.R;
 
+import ai.botbrain.ttcloud.api.BotBrain;
 import ai.botbrain.ttcloud.sdk.view.fragment.IndexFragment;
 
 /**
@@ -27,7 +28,7 @@ public class TipsStyleActivity extends AppCompatActivity implements Toolbar.OnMe
         toolbar.inflateMenu(R.menu.menu_tip);
         toolbar.setOnMenuItemClickListener(this);
 
-        mNewsIndexFragment = new IndexFragment();
+        mNewsIndexFragment = BotBrain.newInstance().getNewsFragment();
 
         if (!mNewsIndexFragment.isAdded()) {
             FragmentManager fragmentManager = getSupportFragmentManager();

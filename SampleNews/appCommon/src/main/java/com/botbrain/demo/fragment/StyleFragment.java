@@ -36,12 +36,13 @@ import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 
 public class StyleFragment extends Fragment implements AdapterView.OnItemClickListener {
 
+    private static final String viewUrl = "http://cloud.botbrain.ai/view/v2/VNMDT28VA9/article/AODgzNDg5MzYxNjg?column_id=100010&plt=android&sid=b3ebf6ab115119241699656f4e7481f7&uid=&guid=9002b25420ad41a718941e8cf60bd67d&scene_id=&algs=[time]&alg_group=time&show_config=true";
+
     private enum Item {
         TabLayout("修改新闻首页滑动标签样式", TabLayoutStyleActivity.class),
         Tips("修改刷新后的提示", TipsStyleActivity.class),
         ReadNewsView("连续点击状态栏3次进入自定义样式模式", ToolBarStyleActivity.class),
         SearchNewsView("连续点击状态栏3次进入自定义样式模式", ToolBarStyleActivity.class),
-
         ;
 
         public String name;
@@ -85,7 +86,7 @@ public class StyleFragment extends Fragment implements AdapterView.OnItemClickLi
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if (Item.values()[position].name().equals("ReadNewsView")) {
-            BotBrain.newInstance().openReadNews(getActivity(), "AODgzMTExNDM3Njg");
+            BotBrain.newInstance().openReadNews(getActivity(), viewUrl);
             return;
         } else if (Item.values()[position].name().equals("SearchNewsView")) {
             BotBrain.newInstance().openSearchNews(getActivity());

@@ -28,11 +28,12 @@ import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 
 public class ToolBarStyleActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
+    private String viewUrl = "http://cloud.botbrain.ai/view/v2/VNMDT28VA9/article/AODgzNDg5MzYxNjg?column_id=100010&plt=android&sid=b3ebf6ab115119241699656f4e7481f7&uid=&guid=9002b25420ad41a718941e8cf60bd67d&scene_id=&algs=[time]&alg_group=time&show_config=true";
+
     private enum Item {
         Delivery("导航栏背景颜色"),
         Delivery2("导航栏左侧按钮"),
-        Delivery3("导航栏左侧图标"),
-        ;
+        Delivery3("导航栏左侧图标"),;
 
         public String option;
 
@@ -68,7 +69,7 @@ public class ToolBarStyleActivity extends AppCompatActivity implements AdapterVi
 
         }
 
-        BotBrain.newInstance().openReadNews(this, "AODgzMTExNDM3Njg");
+        BotBrain.newInstance().openReadNews(this, viewUrl);
     }
 
 }

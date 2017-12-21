@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.botbrain.demo.R;
 import com.botbrain.demo.activity.AdSettingActivity;
@@ -26,6 +27,8 @@ import com.botbrain.demo.adapter.SmartViewHolder;
 import java.util.Arrays;
 
 import ai.botbrain.ttcloud.api.BotBrain;
+import ai.botbrain.ttcloud.sdk.util.ContextHolder;
+import ai.botbrain.ttcloud.sdk.util.ToastUtil;
 import ai.botbrain.ttcloud.sdk.view.activity.ReadNewsActivity;
 import ai.botbrain.ttcloud.sdk.view.activity.SearchNewsActivity;
 
@@ -108,12 +111,12 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
                         BotBrain.newInstance().login(mUserId, mNickName, mAvatar, new BotBrain.LoginCallback() {
                             @Override
                             public void onSuccess() {
-
+                                ToastUtil.showCenter(ContextHolder.getContext(), "登录成功!", Toast.LENGTH_SHORT);
                             }
 
                             @Override
                             public void onFail(String error) {
-
+                                ToastUtil.showCenter(ContextHolder.getContext(), "登录失败!", Toast.LENGTH_SHORT);
                             }
                         });
                     } else if (which == 1) {
