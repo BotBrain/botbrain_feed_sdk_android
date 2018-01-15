@@ -97,11 +97,13 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
 
     private String viewUrl2 = "http://cloud.botbrain.ai/view/v2/S4EBUTASGJ/article/AODgzNjg5NDIxNjg?column_id=100038&plt=android&sid=4ad3e1af6151420388553303482a9732&uid=ZhouXC&guid=ee7aedb0bda345e75cffec1ff74163c1&scene_id=&algs=%5B%22hot%22%5D&alg_group=botbrain&show_config=true";
 
+    private String mid = "AODgzOTM1NTQ2NDA";
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         if ((Item.values()[position].clazz) == ReadNewsActivity.class) {
             /**打开阅读页**/
-            BotBrain.newInstance().openReadNews(getActivity(), viewUrl2);
+            BotBrain.newInstance().openReadNews(getActivity(), mid);
             return;
         }
         if ((Item.values()[position].name().equals("Login"))) {

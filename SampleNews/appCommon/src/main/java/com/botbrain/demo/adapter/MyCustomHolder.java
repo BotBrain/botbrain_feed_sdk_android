@@ -9,7 +9,7 @@ import com.botbrain.demo.R;
 
 import java.util.List;
 
-import ai.botbrain.ttcloud.sdk.model.RecommendNewsEntity;
+import ai.botbrain.ttcloud.sdk.data.entity.RecommendNewsEntity;
 import ai.botbrain.ttcloud.sdk.util.ContextHolder;
 import ai.botbrain.ttcloud.sdk.view.adapter.GraphicAdapter;
 import ai.botbrain.ttcloud.sdk.view.viewholder.newsholder.CustomHolder;

@@ -10,7 +10,7 @@ import java.util.List;
 
 import ai.botbrain.ttcloud.api.NewsFragmentListener;
 import ai.botbrain.ttcloud.api.NewsView;
-import ai.botbrain.ttcloud.sdk.model.RecommendNewsEntity;
+import ai.botbrain.ttcloud.sdk.data.entity.RecommendNewsEntity;
 
 /**
  * Description：

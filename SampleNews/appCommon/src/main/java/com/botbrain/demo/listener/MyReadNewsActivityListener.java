@@ -2,6 +2,7 @@ package com.botbrain.demo.listener;
 
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 
@@ -9,6 +10,7 @@ import com.botbrain.demo.R;
 
 import ai.botbrain.ttcloud.api.ReadNewsActivityListener;
 import ai.botbrain.ttcloud.api.ReadNewsView;
+import ai.botbrain.ttcloud.sdk.domain.Article;
 
 /**
  * Description：
@@ -39,25 +41,45 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
     }
 
     @Override
-    public void onClickShare(String json) {
+    public void onClickShare(Article article) {
+        /*
         Log.i(TAG, json);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
         builder.setTitle("回调信息(onClickShare)");
         builder.setMessage(json);
         builder.show();
+        */
     }
 
     @Override
-    public void onClickLike(String json) {
-        Log.i(TAG, json);
+    public void onClickLike(Article article) {
+/*
+Log.i(TAG, json);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
         builder.setTitle("回调信息(onClickLike)");
         builder.setMessage(json);
         builder.show();
+ */
     }
 
+    @Override
+    public void onComment(Article article) {
+
+    }
+
+    @Override
+    public void onCollect(Article article) {
+
+    }
+
+    @Override
+    public void onClickMore(Article article) {
+
+    }
+
+    /*
     @Override
     public void onComment(String json) {
         Log.i(TAG, json);
@@ -66,7 +88,8 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
         builder.setMessage(json);
         builder.show();
     }
-
+    */
+    /*
     @Override
     public void onClickMore(String json) {
         AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
@@ -74,6 +97,7 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
         builder.setMessage(json);
         builder.show();
     }
+    */
 
     /********************************* 生命周期回调 ************************************/
     @Override
@@ -104,6 +128,11 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
     @Override
     public void onDestroy(Activity activity) {
         Log.i(TAG, "onDestroy()");
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
     }
 
     @Override
