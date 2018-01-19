@@ -124,6 +124,7 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
                             }
                         });
                     } else if (which == 1) {
+                        ToastUtil.showCenter(ContextHolder.getContext(), "注销成功!", Toast.LENGTH_SHORT);
                         BotBrain.newInstance().logout();
                     } else if (which == 2) {
                         Snackbar.make(getView(), "登录状态" + BotBrain.newInstance().isLogin(), Snackbar.LENGTH_LONG).show();
