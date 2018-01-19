@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.botbrain.demo.R;
 
+import ai.botbrain.ttcloud.api.BotBrain;
 import ai.botbrain.ttcloud.api.ReadNewsActivityListener;
 import ai.botbrain.ttcloud.api.ReadNewsView;
 import ai.botbrain.ttcloud.sdk.domain.Article;
@@ -66,7 +67,11 @@ Log.i(TAG, json);
 
     @Override
     public void onComment(Article article) {
-
+        if (!BotBrain.newInstance().isLogin()) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
+            builder.setTitle("登录后才可以评论");
+            builder.show();
+        }
     }
 
     @Override
