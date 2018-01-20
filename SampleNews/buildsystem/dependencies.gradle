@@ -16,7 +16,7 @@ ext {
     universalimageloaderVersion = '1.9.5'
     supportDesign = '25.1.0'
     supportV4Version = '25.1.0'
-    appcompatV7Version = '25.1.0'
+    appcompatV7Version = '26.1.0'
     imagepickerVersion = '0.5.5'
     glideVersion = '3.7.0'
     fastjsonVersion = '1.1.56.android'
