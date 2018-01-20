@@ -47,6 +47,8 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
     private static final String mNickName = "周星星";
     private static final String mUserId = "ZhouXC";
 
+    private String mid = "AODgzOTk4NzUyMDg";
+    private static final String URL = "http://cloud.botbrain.ai/view/v2/F4UZDHT3SS/article/AODgzOTk4NzUyMDg";
 
     private enum Item {
         //Basic("基础集成(日/夜间模式切换)", BasicActivity.class),
@@ -92,12 +94,6 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
         }
 
     }
-
-    private String viewUrl = "http://cloud.botbrain.ai/view/v2/VNMDT28VA9/article/AODgzNDg5MzYxNjg?column_id=100010&plt=android&sid=b3ebf6ab115119241699656f4e7481f7&uid=&guid=9002b25420ad41a718941e8cf60bd67d&scene_id=&algs=[time]&alg_group=time&show_config=true";
-
-    private String viewUrl2 = "http://cloud.botbrain.ai/view/v2/S4EBUTASGJ/article/AODgzNjg5NDIxNjg?column_id=100038&plt=android&sid=4ad3e1af6151420388553303482a9732&uid=ZhouXC&guid=ee7aedb0bda345e75cffec1ff74163c1&scene_id=&algs=%5B%22hot%22%5D&alg_group=botbrain&show_config=true";
-
-    private String mid = "AODgzOTM1NTQ2NDA";
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
