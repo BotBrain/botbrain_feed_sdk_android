@@ -1,2 +1,2 @@
-include ':appCommon'
+include ':app'
 include ':libraryTtc'
