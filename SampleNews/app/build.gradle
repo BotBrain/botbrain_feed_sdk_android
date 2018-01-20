@@ -17,20 +17,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
 
     implementation 'com.android.support:design:27.0.2'
     implementation 'com.android.support:appcompat-v7:27.0.2'
     compile 'ai.botbrain.ttcloud.lite:libraryTtc:1.4.0-alpha-3'
     //compile project(':libraryTtc')
-    testCompile 'junit:junit:4.12'
 }
 repositories {
     flatDir {
