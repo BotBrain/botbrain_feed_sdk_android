@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.botbrain.demo.R;
 
@@ -12,7 +13,9 @@ import ai.botbrain.ttcloud.api.BotBrain;
 import ai.botbrain.ttcloud.api.ReadNewsActivityListener;
 import ai.botbrain.ttcloud.api.ReadNewsView;
 import ai.botbrain.ttcloud.sdk.domain.Article;
+import ai.botbrain.ttcloud.sdk.util.ContextHolder;
 import ai.botbrain.ttcloud.sdk.util.GsonUtil;
+import ai.botbrain.ttcloud.sdk.util.ToastUtil;
 
 /**
  * Description：
@@ -21,6 +24,10 @@ import ai.botbrain.ttcloud.sdk.util.GsonUtil;
  */
 
 public class MyReadNewsActivityListener implements ReadNewsActivityListener {
+
+    private static final String mAvatar = "http://photocdn.sohu.com/20160218/mp59391866_1455765846844_6.jpeg";
+    private static final String mNickName = "周星星";
+    private static final String mUserId = "ZhouXC";
 
     private static final String TAG = MyReadNewsActivityListener.class.getSimpleName();
 
@@ -155,10 +162,24 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
         builder.setPositiveButton("去登录", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                login();
             }
         });
         builder.show();
+    }
+
+    private void login() {
+        BotBrain.newInstance().login(mUserId, mNickName, mAvatar, new BotBrain.LoginCallback() {
+            @Override
+            public void onSuccess() {
+                ToastUtil.showCenter(ContextHolder.getContext(), "登录成功!", Toast.LENGTH_SHORT);
+            }
+
+            @Override
+            public void onFail(String error) {
+                ToastUtil.showCenter(ContextHolder.getContext(), "登录失败!", Toast.LENGTH_SHORT);
+            }
+        });
     }
 
     private void showMessage(String msg) {

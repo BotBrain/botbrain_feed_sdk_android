@@ -112,17 +112,7 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     if (which == 0) {
-                        BotBrain.newInstance().login(mUserId, mNickName, mAvatar, new BotBrain.LoginCallback() {
-                            @Override
-                            public void onSuccess() {
-                                ToastUtil.showCenter(ContextHolder.getContext(), "登录成功!", Toast.LENGTH_SHORT);
-                            }
-
-                            @Override
-                            public void onFail(String error) {
-                                ToastUtil.showCenter(ContextHolder.getContext(), "登录失败!", Toast.LENGTH_SHORT);
-                            }
-                        });
+                        login();
                     } else if (which == 1) {
                         ToastUtil.showCenter(ContextHolder.getContext(), "注销成功!", Toast.LENGTH_SHORT);
                         BotBrain.newInstance().logout();
@@ -135,5 +125,19 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
             return;
         }
         startActivity(new Intent(getContext(), Item.values()[position].clazz));
+    }
+
+    private void login() {
+        BotBrain.newInstance().login(mUserId, mNickName, mAvatar, new BotBrain.LoginCallback() {
+            @Override
+            public void onSuccess() {
+                ToastUtil.showCenter(ContextHolder.getContext(), "登录成功!", Toast.LENGTH_SHORT);
+            }
+
+            @Override
+            public void onFail(String error) {
+                ToastUtil.showCenter(ContextHolder.getContext(), "登录失败!", Toast.LENGTH_SHORT);
+            }
+        });
     }
 }
