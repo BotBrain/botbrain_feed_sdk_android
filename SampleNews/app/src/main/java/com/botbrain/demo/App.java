@@ -27,7 +27,7 @@ public class App extends Application {
         setMyNewsFragmentListener(myNewsFragmentListener);
 
         TtcClient client = new TtcClient.Builder()
-                .setLogEnable(false)
+                .setLogEnable(true)
                 //.setDebug()
                 .setNewsFragmentListener(myNewsFragmentListener)
                 .setReadNewsActivityListener(new MyReadNewsActivityListener())
