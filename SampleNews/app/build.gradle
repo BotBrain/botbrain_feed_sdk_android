@@ -25,8 +25,8 @@ dependencies {
     implementation 'com.android.support:design:27.0.2'
     implementation 'com.android.support:appcompat-v7:27.0.2'
 
-    //compile 'ai.botbrain.ttcloud.lite:libraryTtc:1.4.0-alpha-5'
-    compile project(':libraryTtc')
+    compile 'ai.botbrain.ttcloud.lite:libraryTtc:1.4.0-alpha-6'
+    //compile project(':libraryTtc')
 }
 repositories {
     flatDir {
