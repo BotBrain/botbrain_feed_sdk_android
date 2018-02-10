@@ -10,7 +10,7 @@ import java.util.List;
 import ai.botbrain.smartrefresh.layout.api.RefreshLayout;
 import ai.botbrain.ttcloud.api.NewsFragmentListener;
 import ai.botbrain.ttcloud.api.NewsView;
-import ai.botbrain.ttcloud.sdk.data.entity.RecommendNewsEntity;
+import ai.botbrain.ttcloud.sdk.domain.Article;
 
 /**
  * Description：
@@ -37,7 +37,7 @@ public class MyNewsFragmentListener implements NewsFragmentListener {
     }
 
     @Override
-    public void onRefresh(int position, List<RecommendNewsEntity.Items> datas) {
+    public void onRefresh(List<Article> datas) {
         //自由添加广告数据
         /*
         if (position == 1) {
@@ -49,6 +49,7 @@ public class MyNewsFragmentListener implements NewsFragmentListener {
             datas.add(0, data);
         }
         */
+
     }
 
     @Override
