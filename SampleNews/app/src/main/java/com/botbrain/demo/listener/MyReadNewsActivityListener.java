@@ -60,14 +60,10 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
 
     @Override
     public void onComment(Article article) {
-        if (!BotBrain.newInstance().isLogin()) {
-            tipGotoLogin();
-        }
     }
 
     @Override
     public void onCollect(Article article) {
-        tipGotoLogin();
     }
 
     @Override
@@ -152,6 +148,11 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
             }
         });
         builder.show();
+    }
+
+    @Override
+    public void goToLogin(Activity activity) {
+        tipGotoLogin();
     }
 
     private void tipGotoLogin() {
