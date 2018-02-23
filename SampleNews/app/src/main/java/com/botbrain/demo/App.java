@@ -2,6 +2,7 @@ package com.botbrain.demo;
 
 import android.app.Application;
 
+import com.botbrain.demo.listener.MyBotBrainDataSourceInterceptor;
 import com.botbrain.demo.listener.MyNewsFragmentListener;
 import com.botbrain.demo.listener.MyReadNewsActivityListener;
 import com.botbrain.demo.listener.MySearchNewsActivityListener;
@@ -29,6 +30,7 @@ public class App extends Application {
         TtcClient client = new TtcClient.Builder()
                 .setLogEnable(true)
                 //.setDebug()
+                .setBotBrainDataSourceInterceptor(new MyBotBrainDataSourceInterceptor())
                 .setNewsFragmentListener(myNewsFragmentListener)
                 .setReadNewsActivityListener(new MyReadNewsActivityListener())
                 .setSearNewsActivityListener(new MySearchNewsActivityListener())
