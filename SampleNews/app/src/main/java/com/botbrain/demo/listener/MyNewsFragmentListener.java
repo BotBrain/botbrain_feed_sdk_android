@@ -3,6 +3,7 @@ package com.botbrain.demo.listener;
 import android.app.Activity;
 import android.util.Log;
 
+import com.botbrain.demo.R;
 import com.botbrain.demo.adapter.MyCustomHolder;
 
 import java.util.List;
@@ -29,6 +30,7 @@ public class MyNewsFragmentListener implements NewsFragmentListener {
         mNewsView = view;
         // 添加广告视图
         view.setCustomHolder(new MyCustomHolder());
+        view.setTabTextSelectColor(activity.getResources().getColor(R.color.tsd_color_187cdc));
     }
 
     @Override
