@@ -13,7 +13,7 @@
 
 **[botbrain_feed_sdk-1.0.0.apk](https://github.com/BotBrain/botbrain_feed_sdk_android/releases/download/v1.3.0/botbrain_feed_sdk.apk)**
 
-<img src="https://github.com/BotBrain/botbrain_feed_sdk_android/blob/master/SampleNews/effectPicture/effect_pic2.png?raw=true" width = "1060" height = "" alt="3220" align=center />
+<img src="https://github.com/BotBrain/botbrain_feed_sdk_android/blob/master/SampleNews/effectPicture/effect_pic2.png?raw=true" width = "60" height = "" alt="3220" align=center />
 
 ## Usage
 ### 集成
