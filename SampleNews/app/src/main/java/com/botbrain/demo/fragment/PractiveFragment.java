@@ -19,8 +19,8 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.botbrain.demo.R;
-import com.botbrain.demo.activity.AdSettingActivity;
 import com.botbrain.demo.activity.BasicActivity;
+import com.botbrain.demo.activity.NewsListActivity;
 import com.botbrain.demo.adapter.BaseRecyclerAdapter;
 import com.botbrain.demo.adapter.SmartViewHolder;
 
@@ -53,7 +53,8 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
     private enum Item {
         //Basic("基础集成(日/夜间模式切换)", BasicActivity.class),
         Login("登录和注销操作", BasicActivity.class),
-        AdSettings("向feed流中添加广告", AdSettingActivity.class),
+        //AdSettings("向feed流中添加广告", AdSettingActivity.class),
+        OpenNewsList("点我进入新闻模块", NewsListActivity.class),
         OpenReadNews("打开新闻阅读页面", ReadNewsActivity.class),
         OpenSearchNews("打开新闻搜索页面", SearchNewsActivity.class),;
 
