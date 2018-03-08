@@ -47,6 +47,8 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
     @Override
     public void getReadNewsView(Activity activity, ReadNewsView view) {
         mActivity = activity;
+        // 隐藏评论模块
+        //view.hideCommentFunction();
     }
 
     @Override

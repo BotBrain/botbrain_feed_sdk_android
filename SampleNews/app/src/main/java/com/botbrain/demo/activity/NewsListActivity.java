@@ -20,7 +20,7 @@ public class NewsListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tablayout_style);
+        setContentView(R.layout.activity_news_list);
         mNewsIndexFragment = BotBrain.newInstance().getNewsFragment();
 
         if (!mNewsIndexFragment.isAdded()) {
