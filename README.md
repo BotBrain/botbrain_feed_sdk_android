@@ -31,13 +31,9 @@ allprojects {
 }
 ```
 
-**采用标准版或是精简版可咨询相关负责人**
-```
-// 标准版
-compile 'ai.botbrain.ttcloud:libraryTtc:1.3.0.0'
 
-// 精简版
-compile 'ai.botbrain.ttcloud.lite:libraryTtc:1.3.0.1'
+```
+compile 'ai.botbrain.ttcloud.lite:libraryTtc:1.4.0-alpha-9'
 ```
 
 
@@ -52,35 +48,45 @@ compile 'ai.botbrain.ttcloud.lite:libraryTtc:1.3.0.1'
 3. In Application
 ```
 public class XXApplication extends Application {
-
-    public void onCreate() {
-        super.onCreate();
-        TtCloudManager.init(this);
-    }
+  
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    TtCloudManager.init(this);
+    TtcClient client = new TtcClient.Builder()
+          // 数据拦截器(可选)
+          .setBotBrainDataSourceInterceptor(new MyBotBrainDataSourceInterceptor())
+          // 用于自定义新闻列表样式(可选)
+          .setNewsFragmentListener(new MyNewsFragmentListener())
+          // 自定义详情页样式(可选)
+          .setReadNewsActivityListener(new MyReadNewsActivityListener())
+          // 定义搜索页样式(可选)
+          .setSearNewsActivityListener(new MySearchNewsActivityListener())
+          .build();
+    TtCloudManager.init(this, client);
+  }
 }
 ```
 
 4. In Activity
 ```
 ...
-    private IndexFragment mNewsIndexFragment;
+  private IndexFragment mNewsIndexFragment;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mNewsIndexFragment = BotBrain.newInstance().getNewsFragment();
-        initView();
-        initSchema();
-
-        if (!mNewsIndexFragment.isAdded()) {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.container, mNewsIndexFragment);
-            fragmentTransaction.commit();
-        }
-
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    ...
+    
+    mNewsIndexFragment = BotBrain.newInstance().getNewsFragment();
+    if (!mNewsIndexFragment.isAdded()) {
+      FragmentManager fragmentManager = getSupportFragmentManager();
+      FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+      fragmentTransaction.add(R.id.container, mNewsIndexFragment);
+      fragmentTransaction.commit();
     }
+  }
 ...
 ```
 
