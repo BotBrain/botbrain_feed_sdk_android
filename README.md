@@ -11,7 +11,7 @@
 
 ## 效果
 
-**[botbrain_feed_sdk-1.0.0.apk](https://github.com/BotBrain/botbrain_feed_sdk_android/releases/download/v1.3.0/botbrain_feed_sdk.apk)**
+**[botbrain_feed_sdk-1.4.0.apk](https://github.com/BotBrain/botbrain_feed_sdk_android/releases/download/v1.4.0/release-v1.4.0-pgyer.apk)**
 
 <img src="https://github.com/BotBrain/botbrain_feed_sdk_android/blob/master/SampleNews/effectPicture/effect_pic2.png?raw=true" width = "640" height = "" alt="2800" align=center />
 
