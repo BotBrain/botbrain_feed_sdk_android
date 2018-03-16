@@ -90,8 +90,23 @@ public class XXApplication extends Application {
 ...
 ```
 
-## 自定义样式及回调使用
-[自定义样式及回调信息](https://github.com/BotBrain/botbrain_feed_sdk_android/wiki)
+## [WIKI](http://www.fjeio.c)
+
+-常规使用
+
+1.[QuickStart]()
+
+2.[评论和收藏]()
+
+3.[分享功能]()
+
+-自定义
+
+1.[自定义新闻列表页]()
+
+2.[自定义新闻详情页]()
+
+3.[自定义搜索页]()
 
 ## ProGuard
 If you are using ProGuard you might need to add the following options:
