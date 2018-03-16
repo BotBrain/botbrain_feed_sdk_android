@@ -90,23 +90,23 @@ public class XXApplication extends Application {
 ...
 ```
 
-## [WIKI](http://www.fjeio.c)
+## [WIKI](https://github.com/BotBrain/botbrain_feed_sdk_android/wiki/QuickStart)
 
 -常规使用
 
-1.[QuickStart]()
+1.[QuickStart](https://github.com/BotBrain/botbrain_feed_sdk_android/wiki/QuickStart)
 
-2.[评论和收藏]()
+2.[评论和收藏](https://github.com/BotBrain/botbrain_feed_sdk_android/wiki/%E8%AF%84%E8%AE%BA%E5%92%8C%E6%94%B6%E8%97%8F)
 
-3.[分享功能]()
+3.[分享功能](https://github.com/BotBrain/botbrain_feed_sdk_android/wiki/%E5%88%86%E4%BA%AB%E5%8A%9F%E8%83%BD)
 
 -自定义
 
-1.[自定义新闻列表页]()
+1.[自定义新闻列表页](https://github.com/BotBrain/botbrain_feed_sdk_android/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89UI)
 
-2.[自定义新闻详情页]()
+2.[自定义新闻详情页](https://github.com/BotBrain/botbrain_feed_sdk_android/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89UI)
 
-3.[自定义搜索页]()
+3.[自定义搜索页](https://github.com/BotBrain/botbrain_feed_sdk_android/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89UI)
 
 ## ProGuard
 If you are using ProGuard you might need to add the following options:
