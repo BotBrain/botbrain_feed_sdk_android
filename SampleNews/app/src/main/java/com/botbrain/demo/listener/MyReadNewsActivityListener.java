@@ -145,7 +145,7 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
                         break;
                     // 隐藏点赞
                     case 7:
-                        view.hideLikeView();
+                        view.hideUpView();
                 }
             }
         });
