@@ -57,6 +57,11 @@ public class MyReadNewsActivityListener implements ReadNewsActivityListener {
     }
 
     @Override
+    public void onClickShare(Activity activity, Article article) {
+
+    }
+
+    @Override
     public void onClickLike(Article article) {
     }
 

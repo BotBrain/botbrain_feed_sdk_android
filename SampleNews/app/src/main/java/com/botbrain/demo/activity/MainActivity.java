@@ -7,14 +7,17 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.botbrain.demo.R;
 import com.botbrain.demo.fragment.StyleFragment;
 import com.botbrain.demo.fragment.UseFragment;
 import com.botbrain.demo.fragment.PractiveFragment;
+import com.botbrain.demo.utils.DeviceUuidFactory;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     private enum TabFragment {
         practice(R.id.navigation_practice, PractiveFragment.class),
@@ -62,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i(TAG, "唯一标识：" + DeviceUuidFactory.getUniquePsuedoID());
         setContentView(R.layout.activity_main);
         BottomNavigationView navigationView = (BottomNavigationView) findViewById(R.id.navigation);
         navigationView.setOnNavigationItemSelectedListener(this);
