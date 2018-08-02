@@ -36,7 +36,7 @@ import static android.support.v7.widget.DividerItemDecoration.VERTICAL;
 
 public class StyleFragment extends Fragment implements AdapterView.OnItemClickListener {
 
-    private static final String viewUrl = "http://cloud.botbrain.ai" +
+    private static final String viewUrl = "http://api.botbrain.ai" +
             "/view/v2/VNMDT28VA9/article/AODgzNDg5MzYxNjg?column_id=100010" +
             "&plt=android&sid=b3ebf6ab115119241699656f4e7481f7&uid=&guid" +
             "=9002b25420ad41a718941e8cf60bd67d&scene_id=&algs=[time]&alg_group=time&show_config=true";

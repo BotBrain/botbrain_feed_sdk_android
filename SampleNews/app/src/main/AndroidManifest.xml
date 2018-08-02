@@ -16,7 +16,7 @@
         <!-- 设置申请的 AppId -->
         <meta-data
             android:name="TTC_APPID"
-            android:value="S4EBUTASGJ" />
+            android:value="VNMDT28VA9" />
 
         <activity android:name="com.botbrain.demo.activity.MainActivity">
             <intent-filter>
