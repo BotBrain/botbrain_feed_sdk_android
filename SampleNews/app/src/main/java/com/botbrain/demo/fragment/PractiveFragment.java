@@ -48,7 +48,7 @@ public class PractiveFragment extends Fragment implements AdapterView.OnItemClic
     private static final String mUserId = "ZhouXC";
 
     private String mid = "AODgzOTk4NzUyMDg";
-    private static final String URL = "http://api.xuantoutiao.com/view/v2/F4UZDHT3SS/article/AODgzOTk4NzUyMDg";
+    private static final String URL = "http://cloud.botbrain.ai/view/v2/F4UZDHT3SS/article/AODgzOTk4NzUyMDg";
 
     private enum Item {
         //Basic("基础集成(日/夜间模式切换)", BasicActivity.class),
